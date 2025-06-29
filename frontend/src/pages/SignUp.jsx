@@ -22,7 +22,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="h-screen flex  justify-center items-center">
+    <div className="pt-40 flex  justify-center items-center">
       <div className="w-96 mx-auto  p-4 bg-base-100 rounded-2xl">
         <h2 className="font-bold text-4xl text-center pb-4">Sign Up</h2>
 

@@ -27,9 +27,9 @@ function App() {
   }
 
   return (
-    <div className="bg-base-200" data-theme={theme}>
-      <div className="max-w-7xl mx-auto ">
-        <NavBar />
+    <div className="bg-base-200 min-h-screen" data-theme={theme}>
+      <NavBar />
+      <div className="max-w-7xl mx-auto">
         <Routes>
           <Route
             path="/"
