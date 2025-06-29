@@ -2,8 +2,9 @@
 
 A fullstack authentication web application built using **ReactJS** for the frontend and **Node.js + Express** for the backend, connected via REST API and secured using JWT. The frontend is styled with **Tailwind CSS**, and global state is managed via **Zustand**.
 
----
-
+----
+## 🌐 **Live Site**: [User-Authentication](https://auth-user-frontend.onrender.com)
+----
 ## 📦 Backend Dependencies
 
 * `express`
