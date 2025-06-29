@@ -27,7 +27,10 @@ A fullstack authentication web application built using **ReactJS** for the front
 * `@tailwindcss/vite`
 * `lucide-react`
 * `sonner`
-
+------
+## devDependencies
+* `nodemon`
+* `daisy UI`
 ---
 
 ## 🚀 Getting Started
