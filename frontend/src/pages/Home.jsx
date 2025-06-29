@@ -23,11 +23,11 @@ const Home = () => {
 
   return (
     <div className="pt-20 bg-base-200 flex gap-8 flex-col justify-center items-center ">
-      <div className="relative group hover:scale-105 w-80 h-80  rounded-full transition-transform duration-300  shadow-accent-content shadow-md">
+      <div className="relative group  w-80 h-80  rounded-full  shadow-accent-content hover:shadow-md overflow-hidden">
         <img
           src={imagePreview || authUser.profilePic || defaultImage}
           alt="Profile"
-          className="w-full h-full object-cover rounded-full  "
+          className="w-full h-full object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
           <label
@@ -50,7 +50,9 @@ const Home = () => {
       <h1 className="text-4xl font-bold">
         Welcome <span className="text-primary">{authUser.fullName}</span>
       </h1>
-      <p className="text-4xl font-bold">Email : <span className="text-secondary-content">{authUser.email}</span></p>
+      <p className="text-4xl font-bold">
+        Email : <span className="text-secondary">{authUser.email}</span>
+      </p>
     </div>
   );
 };

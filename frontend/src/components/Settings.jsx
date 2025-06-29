@@ -55,11 +55,11 @@ const Settings = () => {
         <div className="rounded-xl border border-base-300 overflow-hidden bg-base-100 shadow-lg">
           <div className="p-4 bg-base-200">
             <div className="flex flex-col gap-8 justify-center items-center">
-              <div className="relative group hover:scale-105 w-80 h-80  rounded-full transition-transform duration-300  shadow-accent-content shadow-md">
+              <div className="relative group  w-80 h-80  rounded-full  shadow-accent-content hover:shadow-md overflow-hidden">
                 <img
                   src={User.defaultImage}
                   alt="Profile"
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
                   <label
@@ -74,6 +74,10 @@ const Settings = () => {
               <h1 className="text-4xl font-bold mt-4">
                 Welcome <span className="text-primary">{User.name}</span>
               </h1>
+              <p className="text-4xl font-bold">
+                Email :{" "}
+                <span className="text-secondary">{User.email}</span>
+              </p>
             </div>
           </div>
         </div>
