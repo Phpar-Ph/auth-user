@@ -18,7 +18,7 @@ const Login = () => {
   };
 
   return (
-    <div className="pt-40 flex justify-center items-center ">
+    <div className="pt-40 flex justify-center items-center px-4">
       <div className="rounded-2xl w-96 mx-auto  p-4 bg-base-100">
         <h2 className="font-bold text-4xl text-center pb-4">Login</h2>
 
@@ -53,7 +53,7 @@ const Login = () => {
           <p>
             Dont have an account?{" "}
             {
-              <Link to="/signUp" className="hover:underline">
+              <Link to="/signUp" className="hover:underline hover:text-secondary">
                 Sign Up
               </Link>
             }

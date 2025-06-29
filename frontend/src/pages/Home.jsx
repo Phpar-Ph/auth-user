@@ -22,7 +22,8 @@ const Home = () => {
   };
 
   return (
-    <div className="pt-20 bg-base-200 flex gap-8 flex-col justify-center items-center ">
+    <div className="flex justify-center w-full">
+      <div className="pt-20 flex space-y-2 flex-col justify-center items-center  min-w-1/2 p-4 rounded-xl border border-base-300 bg-base-100 shadow-lg">
       <div className="relative group  w-80 h-80  rounded-full  shadow-accent-content hover:shadow-md overflow-hidden">
         <img
           src={imagePreview || authUser.profilePic || defaultImage}
@@ -47,12 +48,13 @@ const Home = () => {
           />
         </div>
       </div>
-      <h1 className="text-4xl font-bold">
+      <h1 className="text-xl md:text-2xl font-bold">
         Welcome <span className="text-primary">{authUser.fullName}</span>
       </h1>
-      <p className="text-4xl font-bold">
+      <p className="text-lg md:text-xl font-bold">
         Email : <span className="text-secondary">{authUser.email}</span>
       </p>
+    </div>
     </div>
   );
 };

@@ -17,12 +17,11 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     signup(formData);
   };
 
   return (
-    <div className="pt-40 flex  justify-center items-center">
+    <div className="pt-40 flex  justify-center items-center px-4">
       <div className="w-96 mx-auto  p-4 bg-base-100 rounded-2xl">
         <h2 className="font-bold text-4xl text-center pb-4">Sign Up</h2>
 
@@ -63,7 +62,10 @@ const SignUp = () => {
           <p className="">
             Already have an account?{" "}
             {
-              <Link to="/login" className="hover:underline">
+              <Link
+                to="/login"
+                className="hover:underline hover:text-secondary"
+              >
                 Sign In
               </Link>
             }

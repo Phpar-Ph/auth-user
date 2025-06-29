@@ -54,7 +54,7 @@ const Settings = () => {
         <h3 className="text-lg font-semibold mb-3">Preview</h3>
         <div className="rounded-xl border border-base-300 overflow-hidden bg-base-100 shadow-lg">
           <div className="p-4 bg-base-200">
-            <div className="flex flex-col gap-8 justify-center items-center">
+            <div className="flex flex-col space-y-2 justify-center items-center">
               <div className="relative group  w-80 h-80  rounded-full  shadow-accent-content hover:shadow-md overflow-hidden">
                 <img
                   src={User.defaultImage}
@@ -71,11 +71,11 @@ const Settings = () => {
                   </label>
                 </div>
               </div>
-              <h1 className="text-4xl font-bold mt-4">
+              <h1 className="text-xl md:text-2xl font-bold mt-4">
                 Welcome <span className="text-primary">{User.name}</span>
               </h1>
-              <p className="text-4xl font-bold">
-                Email :{" "}
+              <p className="text-lg md:text-xl font-bold">
+                Email:
                 <span className="text-secondary">{User.email}</span>
               </p>
             </div>

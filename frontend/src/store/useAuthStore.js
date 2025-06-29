@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { axiosInstance } from "../lib/axios.js";
-
+import { toast } from "sonner";
 export const useAuthStore = create((set) => ({
   isLogin: false,
   isLoggingIn: false,
@@ -10,15 +10,16 @@ export const useAuthStore = create((set) => ({
   isSignUp: false,
   onlineUsers: [],
   isUpdatingProfile: false,
-  checkAuth: async () => {
+  checkAuth: async (suppressError = false) => {
     set({ isCheckingAuth: true });
-      try {
+    try {
       const res = await axiosInstance.get("/auth/check");
-      console.log("AUTH", res);
       set({ authUser: res.data.user });
     } catch (err) {
       set({ authUser: null });
-      console.log("Error in checkAuth: ", err);
+       if (!suppressError) {
+      toast.error("Authentication failed",err);
+    }
     } finally {
       set({ isCheckingAuth: false });
     }
@@ -31,10 +32,10 @@ export const useAuthStore = create((set) => ({
         email: data.email,
         password: data.password,
       });
-      console.log("sigup succesfully");
+      toast.success("Sigup Succesfully");
       set({ authUser: res.data });
     } catch (err) {
-      console.log("Error sign up: ", err);
+      toast.error("Error sign up: ", err);
     } finally {
       set({ isSignUp: false });
     }
@@ -43,8 +44,9 @@ export const useAuthStore = create((set) => ({
     try {
       await axiosInstance.post("/auth/logout");
       set({ authUser: null });
+      toast.success("Logout succesfully");
     } catch (err) {
-      console.log("Error logging out", err);
+      toast.error("Error logging out", err);
     }
   },
   login: async (data) => {
@@ -54,10 +56,10 @@ export const useAuthStore = create((set) => ({
         email: data.email,
         password: data.password,
       });
-      console.log("Sing In succesfully");
+      toast.success("Sign In succesfully");
       set({ authUser: res.data });
     } catch (err) {
-      console.log("Error logging in", err);
+      toast.error("Error logging in", err);
     } finally {
       set({ isLoggingIn: false });
     }
@@ -67,9 +69,9 @@ export const useAuthStore = create((set) => ({
     try {
       const res = await axiosInstance.put("/auth/update-profile", data);
       set({ authUser: res.data });
-      console.log("Profile updated succesfully");
+      toast.success("Profile updated succesfully");
     } catch (err) {
-      console.log("Error uploading profile", err);
+      toast.error("Error uploading profile", err);
     } finally {
       set({ isUpdatingProfile: false });
     }

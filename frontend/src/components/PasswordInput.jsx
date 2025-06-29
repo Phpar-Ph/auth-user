@@ -1,6 +1,6 @@
 const PasswordInput = ({ onChangePassword, password }) => {
   return (
-    <div>
+     <div className="w-full max-w-md mx-auto">
       <label className="input validator w-full" htmlFor="password">
         <svg
           className="h-[1em] opacity-50"
@@ -27,7 +27,7 @@ const PasswordInput = ({ onChangePassword, password }) => {
           autoComplete="password"
           onChange={onChangePassword}
           value={password}
-          className="w-72 h-10 px-3 pr-0 text-sm"
+          className="w-full h-10 px-3 pr-0 text-sm"
           minLength="8"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"

@@ -1,6 +1,6 @@
 const EmailInput = ({ onChangeData, email }) => {
   return (
-    <div>
+    <div className="w-full max-w-md mx-auto">
       <label className="input validator w-full" htmlFor="email">
         <svg
           className="h-[1em] opacity-50"
@@ -27,7 +27,7 @@ const EmailInput = ({ onChangeData, email }) => {
           autoComplete="email"
           placeholder="mail@site.com"
           required
-          className="w-72 h-10 px-3  text-sm"
+          className="w-full h-10 px-3  text-sm"
         />
       </label>
       <div className="validator-hint hidden">Enter valid email address</div>

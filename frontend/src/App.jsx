@@ -9,14 +9,13 @@ import Settings from "./components/Settings";
 import NavBar from "./components/NavBar";
 import { Loader } from "lucide-react";
 import { useThemeStore } from "./store/useThemeStore";
+import { Toaster } from "sonner";
 function App() {
   const { checkAuth, authUser, isCheckingAuth } = useAuthStore();
   const { theme } = useThemeStore();
   useEffect(() => {
-    checkAuth();
+    checkAuth(true);
   }, [checkAuth]);
-
-  console.log("AUth:", { authUser });
 
   if (isCheckingAuth && !authUser) {
     return (
@@ -28,8 +27,9 @@ function App() {
 
   return (
     <div className="bg-base-200 min-h-screen" data-theme={theme}>
+      <Toaster position="top-right" richColors />
       <NavBar />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <Routes>
           <Route
             path="/"
